@@ -7,9 +7,9 @@ const SongRouter = require('./SongRouter')
 const UserRouter = require('./UserRouter')
 
 Router.use('/artist', ArtistRouter)
-// Router.use('/user', UserRouter)
-// Router.use('/song', SongRouter)
-// Router.use('/likedsongs', LikedSongsRouter)
+Router.use('/user', UserRouter)
+Router.use('/song', SongRouter)
+Router.use('/likedsongs', LikedSongsRouter)
 Router.use('/playlists', PlayListRouter)
 Router.use('/album', AlbumRouter)
 
