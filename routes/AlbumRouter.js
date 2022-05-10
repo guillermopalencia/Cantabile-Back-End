@@ -3,6 +3,6 @@ const controller = require('../controllers/AlbumController')
 
 Router.get('/', controller.GetAlbums)
 
-Router.post('/new', controller.CreateAlbum)
+Router.post('/:artist_id', controller.CreateAlbum)
 
 module.exports = Router
