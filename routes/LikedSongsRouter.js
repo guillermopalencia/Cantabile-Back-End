@@ -7,5 +7,6 @@ Router.get('/', (req, res) => {
 Router.get('/:id', controller.getLikedSongsById)
 Router.post('/', controller.addSongToLikedSongs)
 Router.post('/:id', controller.addToLikedSongs)
+Router.delete('/:userId/:songId', controller.removeSongFromLikedSongs)
 
 module.exports = Router
