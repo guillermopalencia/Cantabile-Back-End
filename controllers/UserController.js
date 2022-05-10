@@ -4,7 +4,7 @@ const { User, Song, PlayList, LikedSongs } = require('../models')
 const getUsers = async (req, res) => {
   try {
     const results = await User.findAll()
-    res.send(response)
+    res.send(results)
   } catch (error) {
     throw error
   }
