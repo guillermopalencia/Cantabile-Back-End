@@ -1,0 +1,32 @@
+{
+  "name": "cantabile-back-end",
+  "version": "1.0.0",
+  "description": "back end for my u4 project Cantabile",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guillermopalencia/Cantabile-Back-End.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guillermopalencia/Cantabile-Back-End/issues"
+  },
+  "homepage": "https://github.com/guillermopalencia/Cantabile-Back-End#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "morgan": "^1.10.0",
+    "pg": "^8.7.3",
+    "sequelize": "^6.19.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
