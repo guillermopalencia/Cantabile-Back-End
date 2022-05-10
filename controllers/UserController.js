@@ -44,8 +44,19 @@ const getUserLikedSongs = async (req, res) => {
   }
 }
 
+const createUser = async (req, res) => {
+  try {
+    let userBody = req.body
+    let result = await User.create(userBody)
+    res.send(result)
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
   getUsers,
   getUserPlayList,
-  getUserLikedSongs
+  getUserLikedSongs,
+  createUser
 }
