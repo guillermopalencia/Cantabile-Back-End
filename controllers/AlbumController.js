@@ -2,7 +2,7 @@ const { Album, Artist } = require('../models')
 
 const GetAlbums = async (req, res) => {
   try {
-    const albums = await Album.findall()
+    const albums = await Album.findAll()
     res.send(albums)
   } catch (error) {
     throw error

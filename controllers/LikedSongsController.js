@@ -6,7 +6,7 @@ const getLikedSongsById = async (req, res) => {
     include: [
       {
         model: Song,
-        as: 'moresongs',
+        as: 'liked_songs',
         through: { attributes: [] }
       }
     ],
@@ -17,7 +17,7 @@ const getLikedSongsById = async (req, res) => {
 
 const addToLikedSongs = async (req, res) => {
   const userId = req.params.id
-  const songId = req.body.songId
+  const songId = req.params.songId
   const newList = {
     userId,
     songId
@@ -42,7 +42,7 @@ const addSongToLikedSongs = async (req, res) => {
 
 const removeSongFromLikedSongs = async (req, res) => {
   const userId = req.params.userId
-  const songId = req.params.animeId
+  const songId = req.params.songId
   LikedSongs.destroy({
     where: { userId, songId }
   })

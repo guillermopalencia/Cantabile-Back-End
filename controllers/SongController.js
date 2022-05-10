@@ -11,8 +11,8 @@ const getSongs = async (req, res) => {
 
 const createSongs = async (req, res) => {
   try {
-    let artistId = parseInt(req.params.artist_id)
-    let albumId = parseInt(req.params.ablum_id)
+    let artistId = parseInt(req.params.artistId)
+    let albumId = parseInt(req.params.albumId)
     let songBody = {
       artistId,
       albumId,
