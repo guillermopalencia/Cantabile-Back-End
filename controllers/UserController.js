@@ -1,5 +1,5 @@
 const { response } = require('express')
-const { User } = require('../models')
+const { User, Song, PlayList, LikedSongs } = require('../models')
 
 const getUsers = async (req, res) => {
   try {
@@ -16,11 +16,29 @@ const getUserPlayList = async (req, res) => {
       include: [
         {
           model: Song,
-          as: 'play_list',
+          as: 'play_lists',
           through: { attributes: [] }
         }
       ]
     })
+    res.send(list)
+  } catch (error) {
+    throw error
+  }
+}
+
+const getUserLikedSongs = async (req, res) => {
+  try {
+    const list = await User.findAll({
+      include: [
+        {
+          model: Song,
+          as: 'liked_songs',
+          through: { attributes: [] }
+        }
+      ]
+    })
+    res.send(list)
   } catch (error) {
     throw error
   }
@@ -28,5 +46,6 @@ const getUserPlayList = async (req, res) => {
 
 module.exports = {
   getUsers,
-  getUserPlayList
+  getUserPlayList,
+  getUserLikedSongs
 }
