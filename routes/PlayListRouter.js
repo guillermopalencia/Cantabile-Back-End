@@ -6,7 +6,7 @@ Router.get('/', (req, res) => {
 })
 Router.get('/:id', controller.getPlayListById)
 Router.post('/', controller.addSongToList)
-Router.post('/:id', controller.addToList)
+Router.post('/:id/:songId', controller.addToList)
 Router.delete('/:userId/:songId', controller.removeSongFromList)
 
 module.exports = Router

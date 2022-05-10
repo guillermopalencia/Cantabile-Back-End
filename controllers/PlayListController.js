@@ -6,7 +6,7 @@ const getPlayListById = async (req, res) => {
     include: [
       {
         model: Song,
-        as: 'songs',
+        as: 'play_lists',
         through: { attributes: [] }
       }
     ],
@@ -17,7 +17,7 @@ const getPlayListById = async (req, res) => {
 
 const addToList = async (req, res) => {
   const userId = req.params.id
-  const songId = req.body.songId
+  const songId = req.params.songId
   const newList = {
     userId,
     songId
@@ -42,7 +42,7 @@ const addSongToList = async (req, res) => {
 
 const removeSongFromList = async (req, res) => {
   const userId = req.params.userId
-  const songId = req.params.animeId
+  const songId = req.params.songId
   PlayList.destroy({
     where: { userId, songId }
   })
